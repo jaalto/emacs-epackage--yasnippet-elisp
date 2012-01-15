@@ -1,2 +1,2 @@
-(remove-hook 'emacs-lisp-mode-hook 'el-autoyas-epkg-enable)
-(provide 'el-autoyas-elisp-epkg-uninstall)
+(remove-hook 'yas/minor-mode-hook 'el-autoyas-epackage-enable)
+(provide 'el-autoyas-elisp-epackage-uninstall)

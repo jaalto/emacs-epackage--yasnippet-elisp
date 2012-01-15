@@ -1,13 +1,11 @@
 (autoload 'el-autoyas-expand-maybe "el-autoyas" "" t)
 
-(defun el-autoyas-epkg-enable  ()
+(defun el-autoyas-epackage-enable  ()
   "Enable el-autoyas.el"
-  (when (fboundp 'yas/minor-mode)
-    (require 'el-autoyas nil t)
+  (when (boundp 'yas/fallback-behavior)
     (set (make-local-variable 'yas/fallback-behavior)
-	 '(apply el-autoyas-expand-maybe))
-    (yas/minor-mode 1)))
+	 '(apply el-autoyas-expand-maybe))))
 
-(add-hook 'emacs-lisp-mode-hook 'el-autoyas-epkg-enable)
+(add-hook 'yas/minor-mode-hook 'el-autoyas-epackage-enable)
 
-(provide 'el-autoyas-elisp-epkg-install)
+(provide 'el-autoyas-elisp-epackage-install)
