@@ -5,7 +5,7 @@
 ;; Author: Matthew L. Fidler
 ;; Maintainer: Matthew L. Fidler
 ;; Created: Mon Nov 21 10:55:55 2011 (-0600)
-;; Version: 0.1
+;; Version: 0.5
 ;; Last-Updated: Mon Nov 28 08:46:55 2011 (-0600)
 ;;           By: Matthew L. Fidler
 ;;     Update #: 194
@@ -22,11 +22,167 @@
 ;; 
 ;;; Commentary: 
 ;; 
-;;   
+;; * About
+;; el-autoyas is a small complement to yasnippet for emacs-lisp-mode.  It
+;; provides automatically created yasnippets from eldoc argument lists.
+;; * Requirements
+;;  - [[https://github.com/capitaomorte/yasnippet][yasnippet]]
+;;  - eldoc
+;; * Usage
+;;  - To expand the snippet, type the function name or abbrevation and
+;;    then press `TAB'
+;;  - To jump to the next field press `TAB'.  If you did not change the
+;;    field, either the parameter is kept, or replaced with `nil' or
+;;    nothing depending on the argument list.
+;;  - *NOTE* To use some of the more common functions, you may wish to
+;;    delete all the emacs-lisp snippets in the snippets directory.
+;; * Limitations
+;;  - Currently does not support common lisp key functions
+;;  - Unclear if nested snippet expansion is supported.
+;; * Loading el-autoyas in ~/.emacs
+;; You may use marmalade-repo and ELPA to install el-autoyas, or put it
+;; into your load-path and put the following in =~/.emacs=:
+;; 
+;; 
+;;     (require 'el-autoyas)
+;; 
+;; *Hook run on package load.
+;; Suggestion: Add `el-autoyas-install'.
+;; *Hook run on package load.
+;; Suggestion: Add `el-autoyas-install'.
+;; *Hook run on package load.
+;; Suggestion: Add `el-autoyas-install'.
+;; 
+;; *** yas-backward-compatability
+;; Yasnippet backward compatability functions used in el-autoyas.el
+;; 
+;; Value: ((yas/expand-snippet yas-expand-snippet)
+;;  (yas/modified-p yas-modified-p)
+;;  (yas/moving-away-p yas-moving-away-p)
+;;  (yas/text yas-text)
+;;  (yas/skip-and-clear-or-delete-char yas-skip-and-clear-or-delete-char)
+;;  (yas/snippets-at-point yas--snippets-at-point)
+;;  (yas/update-mirrors yas--update-mirrors)
+;;  (yas/fallback-behavior yas-fallback-behavior)
+;;  (yas/minor-mode yas-minor-mode))
+;; 
+;; 
+;; *Hook run on package load.
+;; Suggestion: Add `el-autoyas-install'.
+;; 
+;; *** yas-backward-compatability
+;; Yasnippet backward compatability functions used in el-autoyas.el
+;; 
+;; Value: ((yas/expand-snippet yas-expand-snippet)
+;;  (yas/modified-p yas-modified-p)
+;;  (yas/moving-away-p yas-moving-away-p)
+;;  (yas/text yas-text)
+;;  (yas/skip-and-clear-or-delete-char yas-skip-and-clear-or-delete-char)
+;;  (yas/snippets-at-point yas--snippets-at-point)
+;;  (yas/update-mirrors yas--update-mirrors)
+;;  (yas/fallback-behavior yas-fallback-behavior)
+;;  (yas/minor-mode yas-minor-mode))
+;; 
+;; 
+;; *Hook run on package load.
+;; Suggestion: Add `el-autoyas-install'.
+;; 
+;; *** yas-backward-compatability
+;; Yasnippet backward compatability functions used in el-autoyas.el
+;; 
+;; Value: ((yas/expand-snippet yas-expand-snippet)
+;;  (yas/modified-p yas-modified-p)
+;;  (yas/moving-away-p yas-moving-away-p)
+;;  (yas/text yas-text)
+;;  (yas/skip-and-clear-or-delete-char yas-skip-and-clear-or-delete-char)
+;;  (yas/snippets-at-point yas--snippets-at-point)
+;;  (yas/update-mirrors yas--update-mirrors)
+;;  (yas/fallback-behavior yas-fallback-behavior)
+;;  (yas/minor-mode yas-minor-mode))
+;; 
+;; 
+;; *Hook run on package load.
+;; Suggestion: Add `el-autoyas-install'.
+;; 
+;; *** yas-backward-compatability
+;; Yasnippet backward compatability functions used in el-autoyas.el
+;; 
+;; Value: ((yas/expand-snippet yas-expand-snippet)
+;;  (yas/modified-p yas-modified-p)
+;;  (yas/moving-away-p yas-moving-away-p)
+;;  (yas/text yas-text)
+;;  (yas/skip-and-clear-or-delete-char yas-skip-and-clear-or-delete-char)
+;;  (yas/snippets-at-point yas--snippets-at-point)
+;;  (yas/update-mirrors yas--update-mirrors)
+;;  (yas/fallback-behavior yas-fallback-behavior)
+;;  (yas/minor-mode yas-minor-mode))
+;; 
+;; 
+;; *Hook run on package load.
+;; Suggestion: Add `el-autoyas-install'.
+;; 
+;; *** yas-backward-compatability
+;; Yasnippet backward compatability functions used in el-autoyas.el
+;; 
+;; Value: ((yas/expand-snippet yas-expand-snippet)
+;; (yas/modified-p yas-modified-p)
+;; (yas/moving-away-p yas-moving-away-p)
+;; (yas/text yas-text)
+;; (yas/skip-and-clear-or-delete-char yas-skip-and-clear-or-delete-char)
+;; (yas/snippets-at-point yas--snippets-at-point)
+;; (yas/update-mirrors yas--update-mirrors)
+;; (yas/fallback-behavior yas-fallback-behavior)
+;; (yas/minor-mode yas-minor-mode))
+;; 
+;; 
+;; *Hook run on package load.
+;; Suggestion: Add `el-autoyas-install'.
+;; 
+;; *** yas-backward-compatability
+;; Yasnippet backward compatability functions used in el-autoyas.el
+;; 
+;; Value: ((yas/expand-snippet yas-expand-snippet)
+;; (yas/modified-p yas-modified-p)
+;; (yas/moving-away-p yas-moving-away-p)
+;; (yas/text yas-text)
+;; (yas/skip-and-clear-or-delete-char yas-skip-and-clear-or-delete-char)
+;; (yas/snippets-at-point yas--snippets-at-point)
+;; (yas/update-mirrors yas--update-mirrors)
+;; (yas/fallback-behavior yas-fallback-behavior)
+;; (yas/minor-mode yas-minor-mode))
 ;; 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 
 ;;; Change Log:
+;; 18-Sep-2012      
+;;    Last-Updated: Mon Nov 28 08:46:55 2011 (-0600) #194 (Matthew L. Fidler)
+;;    Tested with 0.6.  Bug fixes applied.
+;; 18-Sep-2012      
+;;    Last-Updated: Mon Nov 28 08:46:55 2011 (-0600) #194 (Matthew L. Fidler)
+;;    Bug fix for backward compatability
+;; 12-Sep-2012      
+;;    Last-Updated: Mon Nov 28 08:46:55 2011 (-0600) #194 (Matthew L. Fidler)
+;;    Fixed variable yas-backward-compatibility to be
+;;    el-autoyas-backward-compatability so that things will not collide
+;; 12-Sep-2012      
+;;    Last-Updated: Mon Nov 28 08:46:55 2011 (-0600) #194 (Matthew L. Fidler)
+;;    Another attempt to fix emacswiki documentation
+;; 12-Sep-2012      
+;;    Last-Updated: Mon Nov 28 08:46:55 2011 (-0600) #194 (Matthew L. Fidler)
+;;    Org-readme sync attempt -- trying to fix bug in org-readme.
+;; 12-Sep-2012      
+;;    Last-Updated: Mon Nov 28 08:46:55 2011 (-0600) #194 (Matthew L. Fidler)
+;;    Another attempt to upload el-autoyas without the documentation issues
+;;    previously observed.
+;; 12-Sep-2012      
+;;    Last-Updated: Mon Nov 28 08:46:55 2011 (-0600) #194 (Matthew L. Fidler)
+;;    Another attempt to sync.
+;; 12-Sep-2012      
+;;    Last-Updated: Mon Nov 28 08:46:55 2011 (-0600) #194 (Matthew L. Fidler)
+;;    Documentation change
+;; 12-Sep-2012      
+;;    Last-Updated: Mon Nov 28 08:46:55 2011 (-0600) #194 (Matthew L. Fidler)
+;;    Updated el-autoyas to support yasnippet 0.8 naming conventions
 ;; 
 ;; 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -52,11 +208,34 @@
 
 (require 'eldoc)
 (require 'yasnippet nil t)
-;; (require 'yasnippet-bundle nil t)
+(require 'yasnippet-bundle nil t)
 
 (defgroup el-autoyas nil
   "Automatic gerenation of Yasnippets based on Emacs Lisp documentation"
   :group 'yasnippet)
+
+
+
+(defvar el-autoyas-backward-compatability
+  '((yas/expand-snippet yas-expand-snippet)
+    (yas/modified-p yas-modified-p)
+    (yas/moving-away-p yas-moving-away-p)
+    (yas/text yas-text)
+    (yas/skip-and-clear-or-delete-char yas-skip-and-clear-or-delete-char)
+    (yas/snippets-at-point yas--snippets-at-point)
+    (yas/update-mirrors yas--update-mirrors)
+    (yas/fallback-behavior yas-fallback-behavior)
+    (yas/minor-mode yas-minor-mode))
+  "Yasnippet backward compatability functions used in el-autoyas.el")
+
+;; Add backward compatability when needed.
+(mapc
+ (lambda(what)
+   (unless (eval `(or (fboundp ',(nth 1 what)) (boundp ',(nth 1 what))))
+     (if (eval `(functionp ',(nth 0 what)))
+         (eval `(defalias ',(nth 1 what) ',(nth 0 what)))
+       (eval `(defvaralias ',(nth 1 what) ',(nth 0 what))))))
+ el-autoyas-backward-compatability)
 
 (defcustom el-autoyas-abbrevs
   '(
@@ -147,6 +326,10 @@
            (string :tag "Emacs Function")))
   :group 'el-autoyas)
 
+(defvar el-autoyas-load-hook nil
+  "*Hook run on package load.
+Suggestion: Add `el-autoyas-install'.")
+
 (defun el-autoyas-expand-maybe (&optional arg)
   "Expands autoyas snippets.  Falls back to
 `indent-for-tab-command' if it does not expand."
@@ -161,8 +344,8 @@
       (if (looking-back "([^ \n\t()]*" nil t)
           (progn
             (setq what (match-string 0)))
-          (if (looking-back "[^ \n\t()]*" nil t)
-           (setq what (match-string 0)))))
+        (if (looking-back "[^ \n\t()]*" nil t)
+            (setq what (match-string 0)))))
     (if what
         (el-autoyas-snippet what del arg)
       (indent-for-tab-command arg))))
@@ -237,34 +420,36 @@
           (when (and del-char (looking-at ")"))
             (replace-match ""))
           (delete-region (- (point) (length symbol-name)) (point))
-          (yas/expand-snippet snippet))))))
+          (yas-expand-snippet snippet))))))
 
 (defun el-autoyas-text-on-moving-away (default-text &optional orig-text)
   "* Changes text when moving away AND original text has not changed"
   (cond
-   ((or (and (not yas/modified-p) yas/moving-away-p)
-        (and yas/moving-away-p orig-text (string= orig-text yas/text)))
+   ((or (and (not yas-modified-p) yas-moving-away-p)
+        (and yas-moving-away-p orig-text (string= orig-text yas-text)))
     (let (el-autoyas-not-editing)
       (if (string= "" default-text)
-          (yas/skip-and-clear-or-delete-char)
+          (yas-skip-and-clear-or-delete-char)
         (insert default-text))
       (el-autoyas-update)))))
 
 (defun el-autoyas-update ()
   "Update fields"
-  (let ((snippet (first (yas/snippets-at-point))))
+  (let ((snippet (first (yas--snippets-at-point))))
     (when snippet
-      (yas/update-mirrors snippet))))
+      (yas--update-mirrors snippet))))
 
 
-;; (add-hook 'emacs-lisp-mode-hook
-;;           '(lambda ()
-;;              (require 'el-autoyas nil t)
-;;              (when (featurep 'el-autoyas)
-;;                (set (make-local-variable 'yas/fallback-behavior)
-;;                     '(apply el-autoyas-expand-maybe))
-;;                (yas/minor-mode 1))))
 
+;;;###autoload
+(defun el-autoyas-enable ()
+  "Load and activate package."
+  (interactive)
+  (require 'el-autoyas nil t)
+  (when (featurep 'el-autoyas)
+    (set (make-local-variable 'yas-fallback-behavior)
+	 '(apply el-autoyas-expand-maybe))
+    (yas-minor-mode 1)))
 
 (provide 'el-autoyas)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
